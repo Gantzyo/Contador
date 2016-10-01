@@ -1,0 +1,1 @@
+1. Establecer '9000.1' como valor final hará que una vez acabe el contador se reproduzca un sonido y cambie el texto de la web
