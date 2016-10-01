@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <meta charset="utf-8" /> 
+        <title>Contador</title>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <!-- /jQuery -->
+
+        <!-- jQueryUI -->
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+        <!-- /jQueryUI -->
+
+        <!-- bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!-- /bootstrap -->
+        <!-- Ion.sound -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-sound/3.0.7/js/ion.sound.min.js"></script>
+        <!-- /Ion.sound -->
+        <script src="code.js"></script>
+        <style type="text/css">
+            body {
+                width: 800px;
+                margin: auto auto;
+            }
+            h1 {
+                font-size: 60pt;
+                font-weight: bold;
+            }
+            .largeHeader {
+                font-size: 100pt;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#collapse1"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+                </h4>
+            </div>
+            <!-- Eliminar la clase 'in' para que aparezca colapsado al cargar -->
+            <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <form class="col-md-12" role="form">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+                                <div class="col-md-6">
+                                    <label>Inicio</label>
+                                    <input id="inicio" type="text" class="form-control jqConf jqShare"/>
+                                    <br>
+                                    <label>Fin</label>
+                                    <input id="fin" type="text" class="form-control jqConf jqShare"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Cantidad por tick</label>
+                                    <input id="cantidad" type="text" class="form-control jqConf jqShare"/>
+                                    <br>
+                                    <label>Intervalo entre ticks (ms)</label>
+                                    <input id="intervalo" type="text" class="form-control jqConf jqShare"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="col-md-12" role="form">
+                        <div class="panel panel-primary">
+
+                            <div class="panel-body">
+                                <div class="col-md-12">
+                                    <label>Título (opcional)</label>
+                                    <input id="_titulo" type="text" class="form-control jqShare"/>
+                                    <br>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>Descripción (opcional)</label>
+                                    <textarea id="_descripcion" class="form-control jqShare"></textarea>
+                                    <br>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Redirección (opcional)</label>
+                                    <input id="redireccion" type="text" class="form-control jqShare"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Tiempo hasta redirección (ms - opcional)</label>
+                                    <input id="tiempo" type="text" class="form-control jqShare jqConf"/>
+                                </div>
+                                <div class="col-md-12">
+                                    <p class='help-block'>La redirección se efectua después de que termine el contador. Durante los test no se te redirige</p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="col-md-12" role="form">
+                    <div class="col-md-12 text-center panel panel-primary">
+                        <div class="panel-body">
+                        <label>Compartir</label>
+                        <input id="compartir" type="text" class="form-control"/><br>
+                        <button type="button" id="compartirbtn" class="btn btn-default"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Copiar al portapapeles</button>
+                        </div>
+                    </div>
+                    </form>
+                    <div class="col-md-12 text-center">
+                        <p class='help-block'>Tiempo aproximado de ejecución: <span id="aproximado"></span> segundos</p>
+                        <a href="#titulo" id="test" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-play" aria-hidden="true"></span> Test</a>
+                        <button type="button" id="stop" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-stop" aria-hidden="true"></span> Parar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 text-center">
+            <h2 id='titulo'></h2>
+            <p id='descripcion'></p>
+            <h1 id='contador'></h1>
+        </div>
+    </body>
+</html>
