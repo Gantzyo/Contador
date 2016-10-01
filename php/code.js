@@ -57,7 +57,7 @@ $(function () {
                             {name: "over-9000"}
                         ],
                         // main config
-                        path: "",
+                        path: "sounds/",
                         preload: true,
                         multiplay: true,
                         volume: 1
